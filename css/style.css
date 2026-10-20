@@ -1,0 +1,181 @@
+/* Estilos generales */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8fa;
+}
+
+/* Título principal */
+
+h1 {
+    text-align: center;
+    color: #2b5097;
+    font-size: 36px;
+    margin: 30px 0;
+}
+
+/* Contenedor de las tarjetas */
+
+.tarjetas {
+    background-color: #c8cce9;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+/* Diseño de la tarjeta */
+
+.tarjeta {
+    background-color: white;
+    width: 300px;
+    height: 490px;
+    position: relative;
+    box-shadow: 0 5px 10px #999;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado de la tarjeta */
+
+.tarjeta__encabezado {
+    background-color: #c586c9;
+    height: 110px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 75%, 0 100%);
+}
+
+/* Fotografía de perfil */
+
+.tarjeta__imagen {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    display: block;
+    margin: -65px auto 15px;
+    position: relative;
+}
+
+/* Contenido de la tarjeta */
+
+.tarjeta__contenido {
+    text-align: center;
+}
+
+.tarjeta__nombre {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.tarjeta__descripcion {
+    color: #888;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0 20px;
+}
+
+.tarjeta__acciones {
+    display: flex;
+    justify-content: space-evenly;
+    color: #c586c9;
+    font-size: 22px;
+    margin: 35px 0 60px;
+}
+
+/* Redes sociales de John Doe */
+
+.tarjeta__redes {
+    background-color: #6577d3;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+.tarjeta__redes::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #6577d3;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Encabezado diferente para Allison */
+
+.tarjeta--allison .tarjeta__encabezado {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
+}
+/* Iconos circulares de Allison */
+
+.tarjeta--allison .tarjeta__acciones i {
+    width: 42px;
+    height: 42px;
+    border: 2px solid #c586c9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+/* Franja inferior de Allison */
+
+.tarjeta--allison .tarjeta__redes {
+    height: 70px;
+    clip-path: polygon(0 0, 100% 45%, 100% 100%, 0 100%);
+    padding-top: 20px;
+}
+
+.tarjeta--allison .tarjeta__redes::before {
+    display: none;
+}
+
+/* Diseño para pantallas pequeñas */
+
+@media (max-width: 700px) {
+
+    .tarjetas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+}
+
+.tarjeta__nombre::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #888;
+    margin: 12px auto 0;
+}
+
+.tarjeta__redes {
+    margin-top: auto;
+    flex-shrink: 0;
+}
